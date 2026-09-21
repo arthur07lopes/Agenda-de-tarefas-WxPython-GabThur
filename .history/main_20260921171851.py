@@ -1,6 +1,6 @@
 # Programa agendador de tarefas em WXPython
 # Utiliza uma lista com label "Lista de tarefas", armazenando as tarefas atualmente salvas. Após, um botão verde escrito "Adicionar tarefa" e um botão vermelho escrito "remover tarefa", seguidos de um botão "Sair".
-# O botão de adicionar  abre diálogo separado. Ao adicionar, a lista é atualizada. O botão de remover exclui a tarefa e atualiza a lista.
+# Os botões de adicionar e remover abrem diálogos separados. Ao adicionar / remover, a lista é atualizada.
 
 import wx
 from gerenciador import GerenciadorTarefas
@@ -44,21 +44,7 @@ class MainFrame(wx.Frame):
         self.Centre()
 
     def on_adicionar_tarefa(self, event):
-        # Monta o diálogo de adicionar tarefa
-        dialog = wx.Dialog(self, title="Adicionar tarefa", size=(300, 200))
-        vbox = wx.BoxSizer(wx.VERTICAL)
-        # Nome da tarefa
-        lbl_nome = wx.StaticText(dialog, label="Nome da tarefa:")
-        self.txt_nome = wx.TextCtrl(dialog)
-        vbox.Add(lbl_nome, flag=wx.ALL | wx.CENTER, border=10)
-        vbox.Add(self.txt_nome, flag=wx.ALL | wx.CENTER, border=10)
-        # Descrição da tarefa
-        lbl_descricao = wx.StaticText(dialog, label="Descrição da tarefa:")
-        self.txt_descricao = wx.TextCtrl(dialog, style=wx.TE_MULTILINE)
-        vbox.Add(lbl_descricao, flag=wx.ALL | wx.CENTER, border=10)
-        vbox.Add(self.txt_descricao, proportion=1, flag=wx.EXPAND | wx.ALL, border=10)
-        dialog.SetSizer(vbox)
-        dialog.ShowModal()
+        pass
 
     def on_remover_tarefa(self, event):
         pass
