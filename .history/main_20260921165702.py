@@ -48,6 +48,6 @@ class MainFrame(wx.Frame):
         pass
 
 app = wx.App()
-frame = MainFrame(None, "Agendador de tarefas Gabthur")
+frame = MainFrame(None, "Agendador de tarefas")
 frame.Show()
 app.MainLoop()
