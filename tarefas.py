@@ -39,11 +39,14 @@ class GerenciadorTarefas:
 
         return tarefa
 
-    def concluir(self, tarefa_id):
+    def alternar_status(self, tarefa_id):
         tarefa = self.buscar_por_id(tarefa_id)
         if tarefa is None:
             raise ValueError("Tarefa não encontrada.")
-        tarefa["status"] = STATUS_CONCLUIDA
+        if tarefa["status"] == STATUS_CONCLUIDA:
+            tarefa["status"] = STATUS_PENDENTE
+        else:
+            tarefa["status"] = STATUS_CONCLUIDA
         return tarefa
 
     def remover(self, tarefa_id):
